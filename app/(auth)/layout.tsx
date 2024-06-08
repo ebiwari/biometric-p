@@ -16,11 +16,5 @@ export default function LoginLayout({
 }>) {
   //return <div className="container mx-auto  px-4">{children}</div>;
 
-  return (
-    <html lang="eng">
-      <body className={inter.className}>
-        <div className="container mx-auto  px-4">{children}</div>
-      </body>
-    </html>
-  );
+  return <div className="container mx-auto  px-4">{children}</div>;
 }
