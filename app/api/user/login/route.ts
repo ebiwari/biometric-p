@@ -24,14 +24,13 @@ export const POST = async (request: NextRequest) => {
       { id: user._id, firstName: user.firstName },
       process.env.TOKEN_KEY!,
     );
+
     console.log(token);
 
     const resp = await NextResponse.json({ msg: "success" }, { status: 200 });
     resp.cookies.set("token", token);
-
     return resp;
   } catch (err: any) {
     console.log(err);
-    return NextResponse.json({ msg: err.message }, { status: 500 });
   }
 };

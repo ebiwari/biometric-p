@@ -12,6 +12,7 @@ interface IUser {
   email: string;
   password: string;
 }
+const ulrDomain = process.env.DOMAIN || urlConfig.urlDomain;
 
 const Register = () => {
   const [users, setUsers] = useState<IUser>({
