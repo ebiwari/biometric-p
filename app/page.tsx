@@ -10,14 +10,13 @@ interface IUser {
   email: string;
   password: string;
 }
+const ulrDomain = process.env.DOMAIN || urlConfig.urlDomain;
 
 const LoginRoute = () => {
   const [users, setUsers] = useState<IUser>({
     email: "",
     password: "",
   });
-
-  const ulrDomain = process.env.DOMAIN || urlConfig.urlDomain;
 
   const [error, setError] = useState("");
   const [flag, setFlag] = useState(false);
