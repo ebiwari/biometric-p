@@ -5,116 +5,117 @@ import {
   configToken,
   configCapture,
   urlConfig,
+  token,
 } from "@/util/config";
 import { useEffect } from "react";
 
 const FingerVerify = (props: any) => {
-  let token = "";
+  // let token = "";
 
-  useEffect(() => {
-    const connectToken = async () => {
-      try {
-        const respData = await tokenConnect();
-        const respDataConect = await respData.json();
-        token = respDataConect.responseData.accessToken;
-        console.log(token);
-      } catch (err: any) {
-        console.log(err);
-      }
-    };
+  // useEffect(() => {
+  //   const connectToken = async () => {
+  //     try {
+  //       const respData = await tokenConnect();
+  //       const respDataConect = await respData.json();
+  //       token = respDataConect.responseData.accessToken;
+  //       console.log(token);
+  //     } catch (err: any) {
+  //       console.log(err);
+  //     }
+  //   };
 
-    connectToken();
-  }, []);
+  //   connectToken();
+  // }, []);
 
-  const verify = async (Images: any, CaptureID: string) => {
-    // const configReg = configRegistion;
-    // configReg.sequenceNo = pentionId;
-    // configReg.registrationID = pentionId;
-    // configReg.images = images;
+  // const verify = async (Images: any, CaptureID: string) => {
+  //   // const configReg = configRegistion;
+  //   // configReg.sequenceNo = pentionId;
+  //   // configReg.registrationID = pentionId;
+  //   // configReg.images = images;
 
-    const newImage = {
-      clientKey: "",
-      sequneceNo: "",
-      registrationID: "",
-      images: {
-        fingerprint: [],
-      },
-    };
+  //   const newImage = {
+  //     clientKey: "",
+  //     sequneceNo: "",
+  //     registrationID: "",
+  //     images: {
+  //       fingerprint: [],
+  //     },
+  //   };
 
-    newImage.clientKey = configToken.CLIENT_KEY;
-    newImage.registrationID = CaptureID;
+  //   newImage.clientKey = configToken.CLIENT_KEY;
+  //   newImage.registrationID = CaptureID;
 
-    newImage.images.fingerprint.push(Images?.Fingerprint[0]);
+  //   newImage.images.fingerprint.push(Images?.Fingerprint[0]);
 
-    // console.log(images?.Fingerprint[0]);
+  //   // console.log(images?.Fingerprint[0]);
 
-    try {
-      const resp = await fetch(
-        `${configToken.API_URL}/api/Biometrics/Register`,
-        {
-          method: "POST",
-          headers: {
-            Accept: " text/plain",
-            Authorization: `bearer ${token}`,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(newImage),
-        },
-      );
+  //   try {
+  //     const resp = await fetch(
+  //       `${configToken.API_URL}/api/Biometrics/Register`,
+  //       {
+  //         method: "POST",
+  //         headers: {
+  //           Accept: " text/plain",
+  //           Authorization: `bearer ${token}`,
+  //           "Content-Type": "application/json",
+  //         },
+  //         body: JSON.stringify(newImage),
+  //       },
+  //     );
 
-      if (!resp.ok) {
-        throw new Error("Error Sending Data");
-      }
+  //     if (!resp.ok) {
+  //       throw new Error("Error Sending Data");
+  //     }
 
-      const respData = await resp.json();
-      console.log(respData);
-    } catch (err: any) {
-      console.log(err);
-    }
-  };
+  //     const respData = await resp.json();
+  //     console.log(respData);
+  //   } catch (err: any) {
+  //     console.log(err);
+  //   }
+  // };
 
-  const getCapture = async () => {
-    try {
-      const resp = await fetch(urlConfig.urlCapture, {
-        method: "POST", // or 'PUT'
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(configCapture),
-      });
+  // const getCapture = async () => {
+  //   try {
+  //     const resp = await fetch(urlConfig.urlCapture, {
+  //       method: "POST", // or 'PUT'
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(configCapture),
+  //     });
 
-      if (!resp.ok) {
-        throw new Error("Error Sending Data");
-      }
+  //     if (!resp.ok) {
+  //       throw new Error("Error Sending Data");
+  //     }
 
-      const respData = await resp.json();
-      const { CaptureID, Images } = respData;
-      console.log(respData);
+  //     const respData = await resp.json();
+  //     const { CaptureID, Images } = respData;
+  //     console.log(respData);
 
-      // await register(Images, CaptureID);
+  //     // await register(Images, CaptureID);
 
-      // const respCapture = await fetch(
-      //   `${urlConfig.urlDomain}/api/candidate/${props.pensionId}`,
-      //   {
-      //     method: "PUT", // or 'PUT'
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //     },
+  //     // const respCapture = await fetch(
+  //     //   `${urlConfig.urlDomain}/api/candidate/${props.pensionId}`,
+  //     //   {
+  //     //     method: "PUT", // or 'PUT'
+  //     //     headers: {
+  //     //       "Content-Type": "application/json",
+  //     //     },
 
-      //     body: JSON.stringify({ CaptureID, Images }),
-      //   },
-      // );
+  //     //     body: JSON.stringify({ CaptureID, Images }),
+  //     //   },
+  //     // );
 
-      // if (!respCapture.ok) {
-      //   throw new Error("Error Capturing Validating");
-      // }
+  //     // if (!respCapture.ok) {
+  //     //   throw new Error("Error Capturing Validating");
+  //     // }
 
-      // const respCaptureData = await respCapture.json();
-      // console.log(respCaptureData);
-    } catch (err: any) {
-      console.log(err);
-    }
-  };
+  //     // const respCaptureData = await respCapture.json();
+  //     // console.log(respCaptureData);
+  //   } catch (err: any) {
+  //     console.log(err);
+  //   }
+  // };
 
   return (
     <form>
@@ -147,7 +148,6 @@ const FingerVerify = (props: any) => {
       </div>
 
       <button
-        onClick={getCapture}
         type="button"
         className=" mb-2 me-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
       >
