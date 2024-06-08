@@ -14,5 +14,13 @@ export default function LoginLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <div className="container mx-auto  px-4">{children}</div>;
+  //return <div className="container mx-auto  px-4">{children}</div>;
+
+  return (
+    <html lang="eng">
+      <body className={inter.className}>
+        <div className="container mx-auto  px-4">{children}</div>
+      </body>
+    </html>
+  );
 }

@@ -17,8 +17,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
-      <div className="container mx-auto  px-4">{children}</div>
-    </>
+    <html lang="eng">
+      <body className={inter.className}>
+        <div className="container mx-auto  px-4">{children}</div>
+      </body>
+    </html>
   );
 }
