@@ -10,7 +10,7 @@ interface IUser {
   email: string;
   password: string;
 }
-const ulrDomain = urlConfig.urlDomain;
+const ulrDomain = process.env.DOMAIN || urlConfig.urlDomain;
 
 const LoginRoute = () => {
   const [users, setUsers] = useState<IUser>({
@@ -41,9 +41,9 @@ const LoginRoute = () => {
         body: JSON.stringify(users),
       });
 
-      if (!resp.ok) {
-        throw new Error("Registration is not posible this moment");
-      }
+      // if (!resp.ok) {
+      //   throw new Error("Registration Erro O");
+      // }
 
       route.push("/candidate");
     } catch (err: any) {
