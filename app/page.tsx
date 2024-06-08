@@ -42,7 +42,7 @@ const LoginRoute = () => {
       });
 
       if (!resp.ok) {
-        throw new Error("Registration is not posible @ this moment");
+        throw new Error("Registration is not posible this moment");
       }
 
       route.push("/candidate");
