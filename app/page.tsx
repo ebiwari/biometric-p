@@ -11,7 +11,6 @@ interface IUser {
   password: string;
 }
 const ulrDomain = process.env.DOMAIN || urlConfig.urlDomain;
-console.log(process.env.DOMAIN);
 
 const LoginRoute = () => {
   const [users, setUsers] = useState<IUser>({
