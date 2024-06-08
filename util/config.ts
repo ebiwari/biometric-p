@@ -93,8 +93,8 @@ export const configCapture = {
 export const urlConfig = {
   urlCapture: "http://localhost:15896/api/CloudABISV12Captures/Fingerprint",
 
-  urlDomain: "http://localhost:3000",
+  urlDomain: "https//biometric-p.vercel.app",
 };
 
 export const token =
-"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjkwRjU3OEQ3MzIzNzQ4NTU5NkI3MzkwMkMxRTYzODZEIiwiZ2l2ZW5fbmFtZSI6IkJZU1BFTkJPQVJEIiwiZW1haWwiOiJtaWNoYWVsb2Rpa2VtZUBnbWFpbC5jb20iLCJyb2xlIjoiR2VuZXJhbEN1c3RvbWVyIiwibmJmIjoxNzE3NzUwMTQ1LCJleHAiOjE3MTc3NzE3NDUsImlhdCI6MTcxNzc1MDE0NX0.-gj1924DtGwHOB7Ixd13taTJcZimv4Eh-IkTCADk_F0"
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjkwRjU3OEQ3MzIzNzQ4NTU5NkI3MzkwMkMxRTYzODZEIiwiZ2l2ZW5fbmFtZSI6IkJZU1BFTkJPQVJEIiwiZW1haWwiOiJtaWNoYWVsb2Rpa2VtZUBnbWFpbC5jb20iLCJyb2xlIjoiR2VuZXJhbEN1c3RvbWVyIiwibmJmIjoxNzE3NzUwMTQ1LCJleHAiOjE3MTc3NzE3NDUsImlhdCI6MTcxNzc1MDE0NX0.-gj1924DtGwHOB7Ixd13taTJcZimv4Eh-IkTCADk_F0";
