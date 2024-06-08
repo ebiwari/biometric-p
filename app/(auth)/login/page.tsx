@@ -11,6 +11,8 @@ interface IUser {
   password: string;
 }
 
+const ulrDomain = process.env.DOMAIN || urlConfig.urlDomain;
+
 const Login = () => {
   const [users, setUsers] = useState<IUser>({
     email: "",
@@ -32,7 +34,7 @@ const Login = () => {
       return;
     }
     try {
-      const resp = await fetch(`${urlConfig.urlDomain}/api/user/login`, {
+      const resp = await fetch(`${ulrDomain}/api/user/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
