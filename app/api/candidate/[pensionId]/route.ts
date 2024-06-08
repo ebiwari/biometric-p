@@ -5,7 +5,7 @@ import Candidate from "@/models/candidateModel";
 
 type pensionId = string | number;
 
-export const PUT = async (request: NextResponse, { params }: any) => {
+export const PUT = async (request: NextRequest, { params }: any) => {
   await connectDb();
 
   try {
