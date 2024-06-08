@@ -23,6 +23,12 @@ const userSchemea = new mongoose.Schema(
     token: {
       type: String,
     },
+    department: {
+      type: String,
+    },
+    designation: {
+      type: String,
+    },
   },
   { timestamps: true },
 );

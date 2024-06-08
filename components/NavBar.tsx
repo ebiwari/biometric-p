@@ -64,12 +64,16 @@ export function Navbar() {
       </form>
 
       <div className="space-x-2 text-base font-semibold text-green-500 ">
-        <Link className="border-r-2 py-2 pr-2" href="/">
+        <Link className="border-r-2 py-2 pr-2" href="/candidate">
           Dashboard
         </Link>
 
-        <Link className="" href="/">
-          Verify-Candidate
+        <Link className="border-r-2 py-2 pr-2" href="#">
+          Pentionaire:
+        </Link>
+
+        <Link className="border-r-2 py-2 pr-2" href="/register">
+          Admin User:
         </Link>
       </div>
 

@@ -14,7 +14,7 @@ interface IUser {
 }
 const ulrDomain = process.env.DOMAIN || urlConfig.urlDomain;
 
-const Register = () => {
+const Admin = () => {
   const [users, setUsers] = useState<IUser>({
     firstName: "",
     otherName: "",
@@ -25,7 +25,6 @@ const Register = () => {
   const [flag, setFlag] = useState(false);
 
   const route = useRouter();
-  const ulrDomain = process.env.DOMAIN || urlConfig.urlDomain;
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -137,4 +136,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Admin;
