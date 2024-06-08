@@ -25,49 +25,50 @@ const FingerBiometric = (props: any) => {
   //   };  //   connectToken();
   // }, []);
   const [flag, setFlag] = useState(false);
-  const register = async (Images: any, _id: string, pensionN: string) => {
-    const newImage = {
-      clientKey: "",
-      sequneceNo: "",
-      registrationID: "",
-      images: {
-        fingerprint: [],
-      },
-    };
 
-    newImage.clientKey = configToken.CLIENT_KEY;
-    newImage.registrationID = pensionN;
-    newImage.sequneceNo = _id;
+  // const register = async (Images: any, _id: string, pensionN: string) => {
+  //   const newImage = {
+  //     clientKey: "",
+  //     sequneceNo: "",
+  //     registrationID: "",
+  //     images: {
+  //       fingerprint: [],
+  //     },
+  //   };
 
-    newImage.images.fingerprint.push(Images?.Fingerprint[0]);
+  //   newImage.clientKey = configToken.CLIENT_KEY;
+  //   newImage.registrationID = pensionN;
+  //   newImage.sequneceNo = _id;
 
-    console.log(newImage);
+  //   newImage.images.fingerprint.push(Images?.Fingerprint[0]);
 
-    try {
-      const resp = await fetch(
-        `${configToken.API_URL}/api/Biometrics/Register`,
-        {
-          method: "POST",
+  //   console.log(newImage);
 
-          headers: {
-            Accept: " text/plain",
-            Authorization: `bearer ${token}`,
-            "Content-Type": "application/json",
-          },
+  //   try {
+  //     const resp = await fetch(
+  //       `${configToken.API_URL}/api/Biometrics/Register`,
+  //       {
+  //         method: "POST",
 
-          body: JSON.stringify(newImage),
-        },
-      );
+  //         headers: {
+  //           Accept: " text/plain",
+  //           Authorization: `bearer ${token}`,
+  //           "Content-Type": "application/json",
+  //         },
 
-      if (!resp.ok) {
-        throw new Error("Error Sending Data");
-      }
-      const respData = await resp.json();
-      console.log(respData);
-    } catch (err: any) {
-      console.log(err);
-    }
-  };
+  //         body: JSON.stringify(newImage),
+  //       },
+  //     );
+
+  //     if (!resp.ok) {
+  //       throw new Error("Error Sending Data");
+  //     }
+  //     const respData = await resp.json();
+  //     console.log(respData);
+  //   } catch (err: any) {
+  //     console.log(err);
+  //   }
+  // };
 
   const getCapture = async () => {
     setFlag(true);
@@ -85,13 +86,13 @@ const FingerBiometric = (props: any) => {
       const respData = await resp.json();
       const { CaptureID, Images } = respData;
 
-      await register(Images, props.data._id, props.data.pensionN);
+      // await register(Images, props.data._id, props.data.pensionN);
 
-      await updateSatus(
-        props.data.pensionN!,
-        props.data._id,
-        props.data.regStatus,
-      );
+      // await updateSatus(
+      //   props.data.pensionN!,
+      //   props.data._id,
+      //   props.data.regStatus,
+      // );
     } catch (err: any) {
       console.log(err);
     } finally {
