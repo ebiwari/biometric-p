@@ -6,10 +6,11 @@ import IDcardBiometric from "@/components/IDcardBiometric";
 import IDCard from "@/components/IDCard";
 
 type Id = string | number;
+const ulrDomain = process.env.DOMAIN || urlConfig.urlDomain;
 
 const getCandidateById = async (id: Id) => {
   try {
-    const resp = await fetch(`${urlConfig.urlDomain}/api/candidate/?id=${id}`, {
+    const resp = await fetch(`${ulrDomain}/api/candidate/?id=${id}`, {
       next: { revalidate: 0 },
     });
     return await resp.json();

@@ -24,6 +24,7 @@ const Register = () => {
   const [flag, setFlag] = useState(false);
 
   const route = useRouter();
+  const ulrDomain = process.env.DOMAIN || urlConfig.urlDomain;
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -34,7 +35,7 @@ const Register = () => {
     }
 
     try {
-      const resp = await fetch(`${urlConfig.urlDomain}/api/user`, {
+      const resp = await fetch(`${ulrDomain}/api/user`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

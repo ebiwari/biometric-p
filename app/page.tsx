@@ -17,6 +17,8 @@ const LoginRoute = () => {
     password: "",
   });
 
+  const ulrDomain = process.env.DOMAIN || urlConfig.urlDomain;
+
   const [error, setError] = useState("");
   const [flag, setFlag] = useState(false);
 
@@ -32,7 +34,7 @@ const LoginRoute = () => {
       return;
     }
     try {
-      const resp = await fetch(`${urlConfig.urlDomain}/api/user/login`, {
+      const resp = await fetch(`${ulrDomain}/api/user/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
