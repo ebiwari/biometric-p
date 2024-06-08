@@ -39,7 +39,7 @@ export const GET = async (request: NextRequest) => {
   }
 };
 
-export const PUT = async (request: NextResponse) => {
+export const PUT = async (request: NextRequest) => {
   await connectDb();
 
   try {
