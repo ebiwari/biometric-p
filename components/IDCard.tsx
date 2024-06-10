@@ -22,7 +22,13 @@ function IDCard(props: any) {
 
       <div className="my-2 flex flex-row items-center justify-between space-x-2">
         <div className="">
-          <Image alt="pic" className="h-56 w-44 rounded-lg" src={Pic} />
+          <Image
+            alt="pic"
+            className="h-56 w-44 rounded-lg"
+            width={126}
+            height={224}
+            src={`https://fuotuoke.edu.ng/pension/${props.data.PensionN}.jpg`}
+          />
         </div>
 
         <div className="space-y-1">
