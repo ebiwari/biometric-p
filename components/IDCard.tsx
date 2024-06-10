@@ -27,7 +27,7 @@ function IDCard(props: any) {
             className="h-56 w-44 rounded-lg"
             width={126}
             height={224}
-            src={`https://fuotuoke.edu.ng/pension/${props.data.PensionN}.jpg`}
+            src={`https://iithyenagoa.edu.ng/pensions/${props.data.PensionN}.jpg`}
           />
         </div>
 

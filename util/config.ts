@@ -94,7 +94,7 @@ export const urlConfig = {
   urlCapture: "http://localhost:15896/api/CloudABISV12Captures/Fingerprint",
 
   urlDomain: "https://biometric-p.vercel.app",
-  urlDomainMain: "http::/localhost:3000",
+  urlDomainM: "http::/localhost:3000",
 };
 
 export const token =
